@@ -8,8 +8,8 @@ Example: commonCharacters('acexivou', 'aegihobu')
 Returns: 'aeiou'
 */
 
-function commonCharacters(str1, str2) {
-    let result = ''
+const commonCharacters = (str1, str2) => {
+    let result = '';
     for (let char of str1) {
         if (str2.includes(char) && !result.includes(char) && char !== ' ') {
             result += char;
