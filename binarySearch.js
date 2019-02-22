@@ -19,3 +19,6 @@ const binarySearch = (array, value) => {
 const arr = [1, 3, 6, 8, 11, 14, 18, 25, 33, 53, 81, 95, 104, 204, 732, 799, 998, 1947, 3294, 3884, 4869, 5058];
 
 binarySearch(arr, 11); // 4
+binarySearch(arr, 104) // 12
+binarySearch(arr, 998) // 16
+
