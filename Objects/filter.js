@@ -12,3 +12,11 @@ Object.prototype.filter = function (cb) {
     return result;
 }
 
+const obj = { a: 1, b: 2, c: 3, d: 4 }
+var result = obj.filter(function (value) {
+    if (value > 2) {
+        return value;
+    }
+})
+
+console.log(result) //{c: 3, d: 4}
