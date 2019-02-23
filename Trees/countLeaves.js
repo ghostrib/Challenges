@@ -27,3 +27,69 @@ root.countLeaves(); // 3
 
 */
 
+
+var Tree = function (value) {
+    this.value = value;
+    this.children = [];
+};
+
+// Linear time complexity O(n);
+
+Tree.prototype.countLeaves = function () {
+    let count = 0;
+    const countChildren = function (node) {
+        if (node.children.length === 0) {
+            count += 1;
+        } else {
+            node.children.forEach(function (child) {
+                countChildren(child);
+            });
+        }
+    }
+    countChildren(this);
+    return count;
+}
+
+// add an immediate child
+// (wrap values in Tree nodes if they're not already)
+Tree.prototype.addChild = function (child) {
+    if (!child || !(child instanceof Tree)) {
+        child = new Tree(child);
+    }
+
+    if (!this.isDescendant(child)) {
+        this.children.push(child);
+    } else {
+        throw new Error("That child is already a child of this tree");
+    }
+    // return the new child node for convenience
+    return child;
+};
+
+// check to see if the provided tree is already a child of this tree or any of its sub trees
+Tree.prototype.isDescendant = function (child) {
+    if (this.children.indexOf(child) !== -1) {
+        // child is an immediate child of this tree
+        return true;
+    } else {
+        for (var i = 0; i < this.children.length; i++) {
+            if (this.children[i].isDescendant(child)) {
+                // child is descendant of this tree
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+// remove an immediate child
+Tree.prototype.removeChild = function (child) {
+    var index = this.children.indexOf(child);
+    if (index !== -1) {
+        // remove the child
+        this.children.splice(index, 1);
+    } else {
+        throw new Error("That node is not an immediate child of this tree");
+    }
+};
+
