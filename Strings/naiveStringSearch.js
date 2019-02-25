@@ -18,3 +18,6 @@ const stringSearch = (long, short) => {
     return count;
 }
 
+// stringSearch('lorie loled', 'lol') // 1
+// stringSearch('wowomgzomg', 'omg') // 2
+// stringSearch('hello world', 'bye') // 0
