@@ -18,3 +18,8 @@ const firstNonRepeatedCharacter = string => {
     }
     return 'sorry'
 }
+
+// firstNonRepeatedCharacter('ABCDBIRDUP') // 'A'
+// firstNonRepeatedCharacter('XXXXXXX') // 'sorry'
+// firstNonRepeatedCharacter('ALABAMA') // 'L'
+// firstNonRepeatedCharacter('BABA') // 'sorry'
