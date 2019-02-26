@@ -15,6 +15,13 @@ var Tree = function (value) {
     this.children = [];
 };
 
+Tree.prototype.map = function (callback) {
+    let tree = new Tree(callback(this.value));
+    tree.children.forEach(function (child) {
+        child.addChild(callback(child.value))
+    });
+    return tree;
+};
 
 // add an immediate child (wrap values in Tree nodes if they're not already)
 Tree.prototype.addChild = function (child) {
