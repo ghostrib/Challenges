@@ -65,4 +65,22 @@ Tree.prototype.removeChild = function (child) {
     }
 };
 
+/*
+var input = new Tree(1);
+// depth: 1
+input.addChild(2);
+input.addChild(3);
+// depth: 2
+input.children[0].addChild(4);
+input.children[0].addChild(5);
+input.children[1].addChild(6);
+input.children[1].addChild(8);
+// depth: 3 (sparse)
+input.children[0].children[0].addChild(9);
+input.children[1].children[1].addChild(10);
 
+var double = function (value) { return value * 2; };
+var result = input.map(double);
+
+console.log(result)
+*/
