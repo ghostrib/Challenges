@@ -16,10 +16,10 @@ var Tree = function (value) {
 };
 
 Tree.prototype.map = function (callback) {
-    let tree = new Tree(callback(this.value));
-    tree.children.forEach(function (child) {
-        child.addChild(callback(child.value))
-    });
+    const tree = new Tree(callback(this.value));
+    for (let i = 0; i < this.children.length; i++) {
+        tree.children.push(this.children[i].map(callback));
+    }
     return tree;
 };
 
@@ -64,3 +64,5 @@ Tree.prototype.removeChild = function (child) {
         throw new Error("That node is not an immediate child of this tree");
     }
 };
+
+
