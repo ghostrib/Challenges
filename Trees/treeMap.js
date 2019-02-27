@@ -65,7 +65,7 @@ class Tree {
     }
 
 }
-
+/*
 var input = new Tree(1);
 // depth: 1
 input.addChild(2);
@@ -83,3 +83,4 @@ var double = function (value) { return value * 2; };
 var result = input.map(double);
 
 console.log(result)
+*/
