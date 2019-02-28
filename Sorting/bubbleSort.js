@@ -10,3 +10,23 @@ Once it gets to the end of the array, it starts over and repeats the process unt
 Implement a function that takes an array and sorts it using this technique.
 */
 
+const bubbleSort = array => {
+    let temp;
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] > array[i + 1]) {
+                temp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+                swapped = true;
+            }
+        }
+    } while (swapped);
+    return array;
+}
+
+// var arr = [7, 38, 48, 3, 42, 14, 84, 2, 15, 68, 83, 22, 9, 18, 33, 92, 1, 39];
+
+// console.log(bubbleSort(arr)); // [ 1, 2, 3, 7, 9, 14, 15, 18, 22, 33, 38, 39, 42, 48, 68, 83, 84, 92 ];
