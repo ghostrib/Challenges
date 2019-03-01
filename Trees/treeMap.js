@@ -18,8 +18,8 @@ class Tree {
 
     map(callback) {
         const tree = new Tree(callback(this.value));
-        for (let i = 0; i < this.children.length; i++) {
-            tree.children.push(this.children[i].map(callback));
+        for (let child of this.children) {
+            tree.children.push(child.map(callback));
         }
         return tree;
     }
@@ -65,7 +65,7 @@ class Tree {
     }
 
 }
-/*
+
 var input = new Tree(1);
 // depth: 1
 input.addChild(2);
@@ -79,8 +79,11 @@ input.children[1].addChild(8);
 input.children[0].children[0].addChild(9);
 input.children[1].children[1].addChild(10);
 
-var double = function (value) { return value * 2; };
-var result = input.map(double);
 
-console.log(result)
-*/
+console.log(input)
+
+var double = function (value) { return value * 2; };
+//var result = input.map(double);
+
+//console.log(result)
+
