@@ -34,3 +34,14 @@ function insertionSort(array) {
     }
     return array
 }
+
+
+/*
+
+const arr1 = [{ "value": 3 }, { "value": 1 }, { "value": 2 }]
+const arr2 = [{ "value": 10 }, { "value": 5, "order": 1 }, { "value": 5, "order": 2 }];
+
+insertionSort(arr1) // [ { "value": 1 }, { "value": 2 }, { "value": 3 } ]
+insertionSort(arr2) // [ { "value": 5, "order": 1 }, { "value": 5, "order": 2 }, { "value": 10 } ]
+
+*/
