@@ -23,3 +23,17 @@ The best pivot creates partitions of equal length (or lengths differing by 1).
 The worst pivot creates an empty partition (for example, if the pivot is the first or last element of a sorted array).
 */
 
+const quickSort = (array) => {
+    if (array.length < 2) return array;
+    let pivot = array[0];
+    let left = [];
+    let right = [];
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] < pivot) {
+            left.push(array[i]);
+        } else {
+            right.push(array[i]);
+        }
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)]
+}
