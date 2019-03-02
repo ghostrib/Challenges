@@ -37,3 +37,7 @@ const quickSort = (array) => {
     }
     return [...quickSort(left), pivot, ...quickSort(right)]
 }
+
+/*
+quickSort([4,7,2,1,6,3,9,8,5]) // [1,2,3,4,5,6,7,8,9]
+*/
