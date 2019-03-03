@@ -13,3 +13,26 @@ until only a single sorted list remains.
 This can be implemented using either a recursive (“top-down”) or an iterative (“bottom-up”) approach.
 */
 
+const mergeSort = array => {
+    if (array.length < 2) {
+        return array;
+    }
+    let middle = Math.floor(array.length / 2);
+    let left = array.slice(0, middle);
+    let right = array.slice(middle);
+    return merge(mergeSort(left), mergeSort(right));
+}
+
+const merge = (left, right) => {
+    let result = [];
+    let l = 0;
+    let r = 0;
+    while (l < left.length && r < right.length) {
+        if (left[l] < right[r]) {
+            result.push(left[l++]);
+        } else {
+            result.push(right[r++]);
+        }
+    }
+    return result.concat(left.slice(l)).concat(right.slice(r))
+}
