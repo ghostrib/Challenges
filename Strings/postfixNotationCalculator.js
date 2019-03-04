@@ -23,3 +23,31 @@ This expression should be read from left to right, one number / operator at a ti
 In doing so, you must keep a stack of numbers that wait to be operated on.
 */
 
+const calculate = input => {
+    const values = input.split(' ');
+    const stack = [];
+    for (let i in values) {
+        if (values[i] !== '+' && values[i] !== '*' && values[i] !== '-' && values[i] !== '/') {
+            stack.push(parseFloat(values[i]));
+        } else {
+            let operator = values[i];
+            let val2 = stack.pop();
+            let val1 = stack.pop();
+            switch (operator) {
+                case '+':
+                    stack.push(val1 + val2)
+                    break;
+                case '*':
+                    stack.push(val1 * val2)
+                    break;
+                case '-':
+                    stack.push(val1 - val2)
+                    break;
+                case '/':
+                    stack.push(val1 / val2)
+                    break;
+            }
+        }
+    }
+    return stack[0]
+}
