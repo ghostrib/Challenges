@@ -51,3 +51,9 @@ const calculate = input => {
     }
     return stack[0]
 }
+
+/*
+calculate("1 5 8 * +") // 41
+calculate("1 5 8 + *") // 13
+calculate("100 2 / 25 +") // 75
+*/
