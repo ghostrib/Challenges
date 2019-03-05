@@ -41,3 +41,12 @@ boundShout = alice.shout.bind({ name: 'bob' });
 boundShout(); // alerts 'bob'
 */
 
+const bind = function (func, context, ...args) {
+    return function (...args2) {
+        return func.call(context, ...args, ...args2)
+    }
+};
+
+Function.prototype.bind = function (context, ...args) {
+    return bind(this, context, ...args);
+};
