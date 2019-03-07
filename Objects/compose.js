@@ -11,3 +11,5 @@ var exclaim = function(statement) { return statement.toUpperCase() + '!';}
 var welcome = compose(greet, exclaim);
 welcome('phillip'); //=> 'hi: PHILLIP!'
 */
+
+const compose = (...args) => x => args.reduceRight((value, func) => func(value), x)
