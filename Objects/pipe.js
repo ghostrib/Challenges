@@ -11,3 +11,5 @@ var multiplyBy3 = function(number){ return number * 3; }
 pipe(add2, multiplyBy3)(5) //=> 21
 pipe(add2, multiplyBy3, multiplyBy3)(5) //=> 63
 */
+
+const pipe = (...args) => x => args.reduce((value, func) => func(value), x)
