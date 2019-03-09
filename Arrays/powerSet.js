@@ -26,3 +26,14 @@ powerSet("obama") // [ "", "a", "ab", "abm", "abmo", "abo", "am", "amo", "ao", "
 
 */
 
+const powerSet = string => {
+    let output = [''];
+    [...new Set(string)].sort().forEach(char => {
+        const combos = [];
+        output.forEach(item => {
+            combos.push(item + char);
+        });
+        output = output.concat(combos);
+    })
+    return output.sort();
+};
