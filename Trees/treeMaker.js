@@ -12,4 +12,17 @@ var treeMaker = function (value) {
     newTree.children = [];
     return newTree;
 };
+
 treeMaker.methods = {};
+
+treeMaker.methods.addChild = function (value) {
+    this.children.push(treeMaker(value))
+}
+
+treeMaker.methods.contains = function (value) {
+    if (this.value === value) return true;
+    for (let child of this.children) {
+        if (child.contains(value)) return true;
+    }
+    return false
+}
