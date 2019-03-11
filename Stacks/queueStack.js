@@ -20,3 +20,27 @@ var Stack = function () {
     };
 };
 
+var Queue = function () {
+    var inbox = new Stack();
+    var outbox = new Stack();
+
+    this.enqueue = function (value) {
+        inbox.push(value)
+    };
+
+    this.dequeue = function () {
+        if (outbox.size() !== 0) {
+            return outbox.pop()
+        }
+        while (inbox.size()) {
+            outbox.push(inbox.pop());
+        }
+        return outbox.pop()
+    };
+
+    this.size = function () {
+        return inbox.size() + outbox.size()
+    };
+};
+
+
