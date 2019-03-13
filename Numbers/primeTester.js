@@ -12,3 +12,9 @@ function primeTester(n) {
     }
     return n !== 1 && n !== 0;
 }
+
+primeTester(3) // true
+primeTester(4) // false
+primeTester(19) // true
+primeTester(589) // false
+primeTester(893849311) // true
