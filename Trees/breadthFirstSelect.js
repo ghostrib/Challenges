@@ -78,3 +78,21 @@ Tree.prototype.removeChild = function (child) {
     }
 };
 
+Tree.prototype.BFSelect = function (filter) {
+    var queue = new Queue();
+    var result = [];
+    var node = this;
+    this.depth = 0;
+
+    while (node) {
+        if (filter(node.value, node.depth)) {
+            result.push(node.value);
+        }
+        node.children.forEach(child => {
+            child.depth = node.depth + 1;
+            queue.enqueue(child);
+        })
+        node = queue.dequeue();
+    }
+    return result
+};
