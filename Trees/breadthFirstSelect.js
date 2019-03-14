@@ -26,3 +26,15 @@ root1.BFSelect(function (value, depth) {
 }) //=> [2, 3]
 */
 
+const Queue = function () {
+    const storage = [];
+
+    this.enqueue = function (item) {
+        storage.push(item);
+    };
+
+    this.dequeue = function () {
+        return storage.shift();
+    };
+};
+
