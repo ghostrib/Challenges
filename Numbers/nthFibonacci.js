@@ -11,3 +11,11 @@ const nthFibonacci = n => {
     }
     return num0
 };
+
+
+nthFibonacci(5) // 5
+nthFibonacci(6) // 8
+nthFibonacci(7) // 13
+nthFibonacci(8) // 21
+nthFibonacci(9) // 34
+
