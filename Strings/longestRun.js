@@ -24,3 +24,11 @@ function longestRun(string) {
     }
     return longest;
 }
+
+
+longestRun('abbbcc') // [ 1, 3 ]
+longestRun('aabbc') // [ 0, 1 ]
+longestRun('') // [ 0, 0 ]
+longestRun('mississippi') // [ 2, 3 ]
+longestRun('abcdefgh') // [ 0, 0 ]
+longestRun('abccccccc') // [ 2, 8 ]
