@@ -26,3 +26,6 @@ function longestPalindrome(string) {
 function isPalindrome(string) {
     return string.split('').reverse().join('') === string;
 }
+
+longestPalindrome('aibohphobia') // 'aibohphobia'
+longestPalindrome('My dad is a racecar athlete') // 'a racecar a'
