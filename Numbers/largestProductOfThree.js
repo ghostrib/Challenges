@@ -11,3 +11,6 @@ function largestProductOfThree(array) {
     const product2 = array[0] * array[array.length - 1] * array[array.length - 2];
     return Math.max(product1, product2);
 }
+
+largestProductOfThree([2, 1, 3, 7]) // 42
+largestProductOfThree([0, 2, 3]) // 0
