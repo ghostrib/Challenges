@@ -36,3 +36,17 @@ Rotated:
     ['G','C', 8, 4]
 ]
 */
+
+const rotateMatrix = matrix => {
+    const length = matrix.length - 1;
+    for (let i = 0; i <= length / 2; i++) {
+        for (let j = i; j < length - i; j++) {
+            let temp = matrix[i][j];
+            matrix[i][j] = matrix[length - j][i];
+            matrix[length - j][i] = matrix[length - i][length - j];
+            matrix[length - i][length - j] = matrix[j][length - i];
+            matrix[j][length - i] = temp;
+        }
+    }
+    return matrix;
+}
