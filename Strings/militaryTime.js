@@ -18,3 +18,8 @@ function toMilitary(time) {
     }
     return digits.join(':')
 }
+
+toMilitary('3:00pm') // '15:00'
+toMilitary('9:15am') // '09:15'
+toMilitary('12:00am') // '00:00'
+toMilitary('04:00') // '04:00'
