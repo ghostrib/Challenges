@@ -13,3 +13,7 @@ const isBalanced = str => {
     return count === 0;
 };
 
+isBalanced('(x + y) - (4)') // true
+isBalanced('(((10 ) ()) ((?)(:)))') // true
+isBalanced('(50)(') // false
+isBalanced('') // true
