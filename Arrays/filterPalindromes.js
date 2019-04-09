@@ -25,3 +25,5 @@ const isPalindrome = str => {
     const copy = getAlphaChars(str);
     return copy === reverseString(copy);
 }
+
+filterPalindromes(["word", "Ana", "race car"]) // [ 'Ana', 'race car' ];
