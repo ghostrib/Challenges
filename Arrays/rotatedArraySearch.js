@@ -11,3 +11,12 @@ Your time complexity goal is O( log(n) ), where ‘n’ is the number of element
 For simplicity, you can assume that there are no duplicate elements in the array.
 */
 
+function rotatedArraySearch(rotated, target) {
+    let index = -1;
+    let i = 0;
+    while (i < rotated.length) {
+        if (rotated[i] === target) return i;
+        i++
+    }
+    return index;
+}
