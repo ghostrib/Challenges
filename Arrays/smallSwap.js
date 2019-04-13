@@ -17,3 +17,8 @@ function smallSwap(numbers) {
     numbers[toSwap] = first;
     return numbers;
 }
+
+smallSwap([5, 7, 2, 9]) // [ 2, 7, 5, 9 ]
+smallSwap([1, 2, 3]) // [1, 2, 3]
+smallSwap([4, 3, 2, 0, 2]) // [0, 3, 2, 4, 2]
+smallSwap([0, 2, 0, -5]) // [-5, 2, 0, 0]
