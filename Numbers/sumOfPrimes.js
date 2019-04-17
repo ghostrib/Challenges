@@ -18,3 +18,7 @@ function isPrime(n) {
     return n !== 1 && n !== 0;
 }
 
+
+sumOfPrimes(4) // 5
+sumOfPrimes(5) // 10
+sumOfPrimes(6) // 10
