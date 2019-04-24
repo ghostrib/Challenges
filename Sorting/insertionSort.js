@@ -20,21 +20,21 @@ in that order.
 */
 
 function swap(array, idx1, idx2) {
-    const temp = array[idx1];
-    array[idx1] = array[idx2];
-    array[idx2] = temp;
+  const temp = array[idx1];
+  array[idx1] = array[idx2];
+  array[idx2] = temp;
 }
 
 function insertionSort(array) {
-    for (var i = 0; i < array.length; i++) {
-        for (var j = i; j > 0; j--) {
-            if (array[j].value >= array[j - 1].value) break;
-            else swap(array, j, j - 1);
-        }
+  for (var i = 0; i < array.length; i++) {
+    for (var j = i; j > 0; j--) {
+      if (array[j].value >= array[j - 1].value) break;
+      //else swap(array, j, j - 1);
+      [array[j], array[j - 1]] = [array[j - 1], array[j]];
     }
-    return array
+  }
+  return array;
 }
-
 
 /*
 
