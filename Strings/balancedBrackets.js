@@ -18,3 +18,9 @@ function isBalanced(str) {
   if (stack.length === 0) return true;
   return false;
 }
+
+isBalanced("(x + y) - (4)"); // true
+isBalanced("(((10 ) ()) ((?)(:)))"); // true
+isBalanced("[{()}]"); // true
+isBalanced("(50)("); // false
+isBalanced("[{]}"); // false
